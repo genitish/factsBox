@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+<h4>Welcome</h4>
+{% block content %}
+
+{% if user.is_authenticated %}
+<h3 align = "center">Click on Check Facts</h3>
+{% else %}
+<h3 align="center">Login to use This App</h3>
+{% endif %}
+{% endblock %}
