@@ -1,10 +1,21 @@
 {% extends 'base.html' %}
-<h4>Welcome</h4>
+{% load static %}
 {% block content %}
 
+{% load crispy_forms_tags %}
+<!--
+<section id="HeroBanner">
+    <div class="hero-content">-->
 {% if user.is_authenticated %}
-<h3 align = "center">Click on Check Facts</h3>
+        <a href="{% url 'health' %}"></><h2>Health related issue</h2></a>
 {% else %}
-<h3 align="center">Login to use This App</h3>
+
+                <h1>Welcome to FactsBox</h1>
+                <p>Let's find out the Fact about the Facts</p>
+                <a href="{% url 'signup' %}" class="hero-cta">SignUp</a><a href="{% url 'login' %}" class="hero-cta">Login</a>
+
+<!--<h3 align="center" style="margin: 200px auto; font-size: 50px;font-weight: 900; line-height: 100px;">This website is helpful to detect fake news.<br><a href="{% url 'signup' %}">Signup</a> or <a href="{% url 'login' %}">Login</a> to check news</h3>
+-->
 {% endif %}
+
 {% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% block content %}
+<div style = "margin-top:80px; width:900px; margin:80px auto">
+    <form method = "POST" >
+        {% csrf_token %}
+        <fieldset>
+            <br>
+            <br>
+            <label>Choose Related field</label>
+	            <select name="choose">
+                    <option>Select anyone</option>
+                    {% for ct in temp %}
+  		                <option value="{{ct}}">{{ ct }}</option>
+ 		            {% endfor %}
+                </select>
+            <br>
+        <label>Fact</label>
+        <textarea name = "fact">Enter your Fact.....</textarea>
+        </fieldset>
+        <button class = "btn btn-success" type="submit"> Check </button>
+    </form>
+</div>
+<div>
+    {% if result %}
+    <p>{{ result }}</p>
+    {% endif %}
+</div>
+{% endblock %}

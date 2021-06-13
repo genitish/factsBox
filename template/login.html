@@ -3,10 +3,9 @@
 
 {% load static %}
 {% block content %}
-
-
-<div style = "margin-top:80px; width:900px; margin:80px auto">
-    <form method = "POST" >
+<div style="margin: 120px auto;
+    width:500px;">
+    <form method = "POST" style="margin-top:20px; padding:60px; background-color:gray;" >
         {% csrf_token %}
         <fieldset>
             <legend>Login</legend>
@@ -15,5 +14,5 @@
         <button class = "btn" type="submit">Log in</button>
     </form>
 </div>
-
+</div>
 {% endblock %}

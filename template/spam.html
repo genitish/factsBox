@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% load static %}
+{% block content %}
+<div style = "margin-top:80px; width:900px; margin:80px auto">
+    <form method = "POST" >
+        {% csrf_token %}
+        <fieldset>
+            <br>
+        <br>
+        <label>Fact</label>
+        <textarea name = "fact">Enter your Spam Mail.....</textarea>
+        </fieldset>
+        <button class = "btn btn-primary" type="submit"> Check </button>
+    </form>
+</div>
+
+<div>
+    {% if result %}
+    <p>This mail is : {{ result }}</p>
+    {% endif %}
+</div>
+{% endblock %}

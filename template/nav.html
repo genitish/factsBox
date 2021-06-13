@@ -1,14 +1,54 @@
-<body>
-<head>
-{% load static %}
 
-<link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-</head>
+<section id="MainContainer">
+        <!-- Header starts here -->
+        <header id="Header">
+            <nav class="main-navigation">
+                <div class="container clearfix">
+                    <div class="site-logo-wrap">
+                        <a class="logo" href="#">FactsBox</a>
+                    </div>
+                    <a href="javascript:void(0)" class="menu-trigger hidden-lg-up"><span>&nbsp;</span></a>
+                    <div class="main-menu hidden-md-down">
+                        <ul class="menu-list">
+                            <li><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                            {% if user.is_authenticated %}
+                               <!-- <li><a class="nav-link" href="{% url 'news' %}">Add Fake News</a></li> -->
+                                <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                            {% else %}
+                                <li><a class="nav-link" href="{% url 'signup' %}">Signup</a></li>
+                                <li><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                            {% endif %}
+                          <!--  <li><a class="nav-link" href="javascript:void(0)" data-target="#Services">Services</a></li>
+                            <li><a class="nav-link" href="javascript:void(0)" data-target="#About">About</a></li>
+                            <li><a class="nav-link" href="javascript:void(0)" data-target="#Portfolio">Portfolio</a></li>
+                            <li><a class="nav-link" href="javascript:void(0)" data-target="#ContactUs">Contact</a></li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="mobile-menu hidden-lg-up">
+                    <ul class="mobile-menu-list">
+                        <ul class="menu-list">
+                            <li><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                            {% if user.is_authenticated %}
+                                <!-- <li><a class="nav-link" href="{% url 'news' %}">Add Fake News</a></li> -->
+                                <li><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                            {% else %}
+                                <li><a class="nav-link" href="{% url 'signup' %}">Signup</a></li>
+                                <li><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                            {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </header>
+</section>
+        <!-- Header ends here -->
 
-<body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+
+<!--
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display >
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -18,23 +58,24 @@
       </button>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Collect the nav links, forms, and other content for toggling >
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a></li>
+        <li class="active"><a href="{% url 'home' %}" style="font-weight: 700; font-size: 30px;">WhatsFake<span class="sr-only">(current)</span></a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
+        <li><a href="{% url 'home' %}">Home</a></li>
         {% if user.is_authenticated %}
-           <li><a href="{% url 'news' %}">Check Facts</a></li>
-           <li><a href="{% url 'logout' %}">Logout</a></li>
+            <li><a href="{% url 'news' %}">Add Fake Facts</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
         {% else %}
           <li><a href="{% url 'signup' %}">Signup</a></li>
           <li><a href="{% url 'login' %}">Login</a></li>
         {% endif %}
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div><!-- /.navbar-collapse ->
+  </div><!-- /.container-fluid ->
 </nav>
-</body>
 </html>
+</html>-->
